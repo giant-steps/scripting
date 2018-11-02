@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cac3e7-70ab-4e8b-a9cb-01df86e111c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hw5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw5.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw5.1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,32 +30,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="602" />
+          <entry key="py" value="636" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="602" />
+          <entry key="Python" value="636" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw5.1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+            <state relative-caret-position="585">
+              <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+              <folding>
+                <element signature="e#839#849#0" expanded="true" />
+                <marker date="1541186459222" expanded="true" signature="1651:1674" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5.2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="540">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -78,8 +82,8 @@
         <option value="$PROJECT_DIR$/one.py" />
         <option value="$PROJECT_DIR$/5hw/one.py" />
         <option value="$PROJECT_DIR$/hw5.py" />
-        <option value="$PROJECT_DIR$/hw5.1.py" />
         <option value="$PROJECT_DIR$/hw5.2.py" />
+        <option value="$PROJECT_DIR$/hw5.1.py" />
       </list>
     </option>
   </component>
@@ -185,17 +189,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5.1.py">
+    <entry file="file://$PROJECT_DIR$/hw5.2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        <state relative-caret-position="540">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hw5.2.py">
+    <entry file="file://$PROJECT_DIR$/hw5.1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="585">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding>
+            <element signature="e#839#849#0" expanded="true" />
+            <marker date="1541186459222" expanded="true" signature="1651:1674" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
