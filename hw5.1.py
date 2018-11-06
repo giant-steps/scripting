@@ -29,32 +29,35 @@ import random
 def random_graph(nnodes):
     DG = nx.DiGraph()
 
-    alphabet = ["a", "b", "c", "d", "e", "f", "g"]
+    nodes = range(nnodes)
 
-    DG.add_nodes_from(alphabet)
+    DG.add_nodes_from(nodes)
 
     links = []
 
-    for i in alphabet:
-        for j in alphabet:
-            # flip = bool(random.getrandbits(1))
-            roll = random.randint(0, 4)
+    for i in nodes:
+        for j in nodes:
+            roll = random.randint(0, 2)
 
-            if roll == 3:
-                # links.append("(" + str(i) + "," + str(j) + ")")
+            if roll == 1:
                 links.append((i, j))
-
-    # print(links)
 
     DG.add_edges_from(links)
 
-    # print(DG)
-
     nx.draw_random(DG)  ## ************
     plt.draw()
-    plt.show()
+    #plt.show()
 
     #return DG
+
+    #####
+
+    for v in nodes:
+        print(v)
+
+
+
+
 
 def depth_search(graph, start):
     pass
@@ -64,7 +67,8 @@ def breadth_search(graph, start):
 
 ## main function definition
 def main():
-    random_graph(10)
+    random_graph(8)
+    #plt.show()         ## **************
 
 ## run main function
 if __name__ == "__main__":
