@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 import random
 
 ## function / class definitions
-def random_graph(nnodes):
+def random_graph(nnodes, connect):
     DG = nx.DiGraph()
 
     nodes = range(nnodes)
@@ -35,11 +35,13 @@ def random_graph(nnodes):
 
     links = []
 
+    random.seed(15)
+
     for i in nodes:
         for j in nodes:
-            roll = random.randint(0, 3)
+            roll = random.randint(0, connect)
 
-            if roll == 1:
+            if roll == 0:
                 links.append((i, j))
 
     DG.add_edges_from(links)
@@ -80,8 +82,8 @@ def breadth_search(graph, start):
 
 ## main function definition
 def main():
-    random_graph(8)
-    #plt.show()         ## **************
+    random_graph(10, 4)
+    plt.show()         ## **************
 
 ## run main function
 if __name__ == "__main__":

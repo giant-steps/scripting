@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cac3e7-70ab-4e8b-a9cb-01df86e111c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw5.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw5.1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,12 +31,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="995" />
+          <entry key="py" value="1101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="995" />
+          <entry key="Python" value="1101" />
         </counts>
       </usages-collector>
     </session>
@@ -50,11 +49,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw5.1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="76" column="27" lean-forward="true" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+            <state relative-caret-position="352">
+              <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
               <folding>
                 <element signature="e#839#849#0" expanded="true" />
-                <marker date="1541539843518" expanded="true" signature="1731:1795" ph="..." />
+                <marker date="1541540577599" expanded="true" signature="1802:1869" ph="..." />
               </folding>
             </state>
           </provider>
@@ -189,11 +188,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5.1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="76" column="27" lean-forward="true" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        <state relative-caret-position="352">
+          <caret line="84" column="22" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
           <folding>
             <element signature="e#839#849#0" expanded="true" />
-            <marker date="1541539843518" expanded="true" signature="1731:1795" ph="..." />
+            <marker date="1541540577599" expanded="true" signature="1802:1869" ph="..." />
           </folding>
         </state>
       </provider>
