@@ -37,7 +37,7 @@ def random_graph(nnodes):
 
     for i in nodes:
         for j in nodes:
-            roll = random.randint(0, 2)
+            roll = random.randint(0, 3)
 
             if roll == 1:
                 links.append((i, j))
@@ -52,10 +52,23 @@ def random_graph(nnodes):
 
     #####
 
-    for v in nodes:
-        print(v)
+    #for v in nodes:
+        #print(v)
+
+    namenodes = {}
+
+    for item in nodes:
+        namenodes[item] = {'node number' : str(item)}
+
+    #print(namenodes)
 
 
+
+
+
+    nx.set_node_attributes(DG, namenodes)
+    nodenames = nx.get_node_attributes(DG, 'node number')
+    print(nodenames)
 
 
 
