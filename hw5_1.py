@@ -75,8 +75,8 @@ what is the approach here...
 """
 def depth_search(graph, start):
 
+    """
     nodecount = nx.number_of_nodes(graph)
-
 
     nx.get_node_attributes(graph, 'node number')
 
@@ -84,6 +84,28 @@ def depth_search(graph, start):
         adjacent = nx.all_neighbors(graph, node)
         for neighbor in adjacent:
             print(neighbor)
+    """
+
+    start = [node for node in nx.nodes(graph) if node == 0]
+    #print(start)
+
+    stepone = nx.all_neighbors(graph, 0)
+    tier1 = [x for x in stepone]
+    #print(tier1[0])
+    steptwo = nx.all_neighbors(graph, tier1[0])
+    tier2 = [x for x in steptwo]
+    print(tier2)
+
+        ## for neighbors of tier1[0]: if not the one we came from, put in list -- then exhaust that list
+
+
+
+
+
+
+    #for i in nx.nodes(graph):
+        #print(i)
+
 
 def breadth_search(graph, start):
     pass
