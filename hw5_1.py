@@ -86,6 +86,9 @@ def depth_search(graph, start):
             print(neighbor)
     """
 
+
+    """
+    COMMENTING THIS SECTION and copying to work on, revert back to if needed
     start = [node for node in nx.nodes(graph) if node == 0]
     #print(start)
 
@@ -97,6 +100,51 @@ def depth_search(graph, start):
     print(tier2)
 
         ## for neighbors of tier1[0]: if not the one we came from, put in list -- then exhaust that list
+    """
+
+
+
+
+    #start = [node for node in nx.nodes(graph) if node == 0]
+    # print(start)
+
+    ## possible approach -- dictionary of dictionaries (or list of lists)?
+
+
+
+    tier = 0
+
+    pick = 0
+
+    all = {}
+
+    all[tier] = [x for x in nx.all_neighbors(graph, tier)]
+
+    ## throw this in a while loop ^ & iterate thru tiers and nodes in each tier
+
+    ## this structure should work for 2 and 3 -- just will move thru it in a different order
+
+
+
+
+
+
+    #stepone = nx.all_neighbors(graph, tier)
+
+    tier1 = [x for x in stepone]
+    # print(tier1[0])
+    steptwo = nx.all_neighbors(graph, tier1[0])
+    tier2 = [x for x in steptwo]
+    print(tier2)
+
+    ## for neighbors of tier1[0]: if not the one we came from, put in list -- then exhaust that list
+
+
+
+
+
+
+
 
 
 
