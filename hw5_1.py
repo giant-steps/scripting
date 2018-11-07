@@ -59,20 +59,42 @@ def random_graph(nnodes, connect):
 
     nx.set_node_attributes(DG, namenodes)
     nodenames = nx.get_node_attributes(DG, 'node number')
-    print(nodenames)
+    #print(nodenames)       ## ***********
+
+    return DG
 
 
-
+"""
+what is the approach here...
+    start with node zero 
+    if there is an adjacent node, go to it (if multiple, pick one)
+        repeat until there isn't a next node
+    then go back to last node -- if another, pursue it; if not, go back another node
+    
+    repeat this process until all nodes have been searched
+"""
 def depth_search(graph, start):
-    pass
+
+    nodecount = nx.number_of_nodes(graph)
+
+
+    nx.get_node_attributes(graph, 'node number')
+
+    for node in nx.nodes(graph):
+        adjacent = nx.all_neighbors(graph, node)
+        for neighbor in adjacent:
+            print(neighbor)
 
 def breadth_search(graph, start):
     pass
 
 ## main function definition
 def main():
-    random_graph(10, 4)
-    plt.show()
+    graph = random_graph(10, 4)
+    #plt.show()     ## ***********
+
+    depth_search(graph, 0)
+
 
 ## run main function
 if __name__ == "__main__":
