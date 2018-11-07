@@ -1,21 +1,14 @@
 """
-
 This program will answer part one of hw5 for scripting
-
 1) A function to create a random graph. This function will take a single parameter for the number
 of nodes in the graph, and will return a NetworkX undirected graph object.
-
 2) A function that implements a depth-first search of a graph. This function will take two
 parameters: a NetworkX graph object and the node at which to start the search. It will return a
 list of node names in the order they were visited. (Hint: use a stack to implement this algorithm)
-
 3) A function that implements a breadth-first search of a graph. This function will take two
 parameters: a NetworkX graph object and the node at which to start the search. It will return a
 list of node names in the order they were visited. (Hint: use a queue to implement this
 algorithm)
-
-
-
 """
 
 ## import statements
@@ -26,9 +19,7 @@ import matplotlib.pyplot as plt
 import random
 
 ## function / class definitions
-def random_graph(nnodes):
-    random.seed(15)
-
+def random_graph(nnodes, connect):
     DG = nx.DiGraph()
 
     nodes = range(nnodes)
@@ -37,11 +28,13 @@ def random_graph(nnodes):
 
     links = []
 
+    random.seed(15)
+
     for i in nodes:
         for j in nodes:
-            roll = random.randint(0, 2)
+            roll = random.randint(0, connect)
 
-            if roll == 1:
+            if roll == 0:
                 links.append((i, j))
 
     DG.add_edges_from(links)
@@ -52,19 +45,17 @@ def random_graph(nnodes):
 
     #return DG
 
+    namenodes = {}
 
-    nx.get_node_attributes(DG)
+    for item in nodes:
+        namenodes[item] = {'node number' : str(item)}
 
+    #print(namenodes)
 
-    #####
+    nx.set_node_attributes(DG, namenodes)
+    nodenames = nx.get_node_attributes(DG, 'node number')
+    print(nodenames)
 
-    #for v in nodes:
-        #print(v)
-
-
-        ## nx.set_node_attributes(G, values)    set node attributes from given value or dictionary
-
-        ## nx.get_node_attributes(G, name)      get node attributes from graph
 
 
 def depth_search(graph, start):
@@ -75,8 +66,8 @@ def breadth_search(graph, start):
 
 ## main function definition
 def main():
-    random_graph(8)
-    plt.show()         ## **************
+    random_graph(10, 4)
+    plt.show()
 
 ## run main function
 if __name__ == "__main__":

@@ -26,11 +26,11 @@ import matplotlib.pyplot as plt
 import random
 
 ## function / class definitions
-def random_graph(nnodes):
-    #DG = nx.DiGraph()
+#<<<<<<< HEAD
 
-    DG = nx.Graph()
-
+def random_graph(nnodes, connect):
+#>>>>>>> 75eed0abce735329d129a8df6d99ba729dad4cd7
+    DG = nx.DiGraph()
 
     nodes = range(nnodes)
 
@@ -38,11 +38,13 @@ def random_graph(nnodes):
 
     links = []
 
+    random.seed(15)
+
     for i in nodes:
         for j in nodes:
-            roll = random.randint(0, 2)
+            roll = random.randint(0, connect)
 
-            if roll == 1:
+            if roll == 0:
                 links.append((i, j))
 
     DG.add_edges_from(links)
@@ -61,9 +63,27 @@ def random_graph(nnodes):
 
     #for v in nodes:
         #print(v)
+#<<<<<<< HEAD
 
 
         ## nx.set_node_attributes(G, values)    set node attributes from given value or dictionary
+#=======
+
+    namenodes = {}
+
+    for item in nodes:
+        namenodes[item] = {'node number' : str(item)}
+
+    #print(namenodes)
+
+
+
+
+
+    nx.set_node_attributes(DG, namenodes)
+    nodenames = nx.get_node_attributes(DG, 'node number')
+    print(nodenames)
+#>>>>>>> 75eed0abce735329d129a8df6d99ba729dad4cd7
 
         ## nx.get_node_attributes(G, name)      get node attributes from graph
 
@@ -76,7 +96,9 @@ def breadth_search(graph, start):
 
 ## main function definition
 def main():
-    random_graph(8)
+
+    random_graph(10, 4)
+
     plt.show()         ## **************
 
 ## run main function
