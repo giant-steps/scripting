@@ -27,9 +27,10 @@ import random
 
 ## function / class definitions
 def random_graph(nnodes):
-    random.seed(15)
+    #DG = nx.DiGraph()
 
-    DG = nx.DiGraph()
+    DG = nx.Graph()
+
 
     nodes = range(nnodes)
 
