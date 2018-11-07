@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65cac3e7-70ab-4e8b-a9cb-01df86e111c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hw5.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/hw5.1.py" afterDir="false" />
-    </list>
+    <list default="true" id="65cac3e7-70ab-4e8b-a9cb-01df86e111c5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hw5.1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+            <state relative-caret-position="-533">
+              <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
               <folding>
                 <element signature="e#839#849#0" expanded="true" />
                 <marker date="1541544257671" expanded="true" signature="1745:1786" ph="..." />
@@ -62,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hw5.2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="336">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -181,15 +179,15 @@
     <entry file="file://$PROJECT_DIR$/hw5.py" />
     <entry file="file://$PROJECT_DIR$/hw5.2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="336">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hw5.1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="78" column="10" lean-forward="true" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
+        <state relative-caret-position="-533">
+          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding>
             <element signature="e#839#849#0" expanded="true" />
             <marker date="1541544257671" expanded="true" signature="1745:1786" ph="..." />
