@@ -68,47 +68,56 @@ def depth_search(graph, start):
     pick = 0    ## depth first -- grab first list element for all, then second, etc.
     nodenum = start     ## start at node 0 -- this is fed in as function argument
 
-    def all_append(dict, level, ind, id, graph_id, check):
-        dict[(level, ind)] = (id, [x for x in nx.all_neighbors(graph_id, id) if x not in check])
-        ## dict is all, level is tier, ind is pick / num in list, id is nodenum, graph_id is graph, check is covered
+    def all_append(dict, level, id, graph_id, check):
+        dict[(level, id)] = [x for x in nx.all_neighbors(graph_id, id) if x not in check]
+        ## dict is all, level is tier, id is nodenum, graph_id is graph, check is covered
 
     tierset = tier
     nodenumset = nodenum
     covered = []    ## nodes that have been searched
         ## using covered in this way will ignore connections to nodes that have already been searched
 
-    all_append(all, tier, pick, nodenum, graph, covered)
+    all_append(all, tier, nodenum, graph, covered)
 
 
     covered.append(nodenum)
 
     print(all)
 
+    neighbors = all[tier, nodenum]  ##### ?????????
+
     a = True    #########
     while a == True:
 
-        while all[tier, pick] != []:
-            neighbors = all[tier, pick]
-            nodenum = neighbors[pick]
-            tier += 1
-            covered.append(nodenum)
 
-            all_append(all, tier, pick, nodenum, graph, covered)
+        if neighbors != []:
+            while all[tier,nodenum] != []:
+                neighbors = all[tier,nodenum]
+                nodenum = neighbors[pick]
+                #neighbors = [x for x in neighbors if x not in covered]
+                #print('neighbors: ' + str(neighbors))    #############
+                tier += 1
+                covered.append(nodenum)
 
-            print(all)
-            #print("cycle")     ###########
+                all_append(all, tier, nodenum, graph, covered)
 
-        break
+                print(all)
+                #print("cycle")     ###########
+
+
+
+        neighbors = [x for x in neighbors if x not in covered]
 
         tier -= 1
-        pick += 1
+        if neighbors != []:
+            nodenum = neighbors[pick]
+
+        ## save neighbors from last -- look in neighbors [x for x in neighbors if x not in covered]
+
+        else:
+            break
 
 
-
-    ## I need to rethink this -- don't want to have to specify node in dict key
-    ## should be tuple of (tier, pick)
-    ## nodenum will be stored in value
-    ## so value will be tuple (nodenum, list_of_adjacents)
 
 
 
