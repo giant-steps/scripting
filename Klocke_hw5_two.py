@@ -24,7 +24,6 @@ output for 4-8 above (please paste the figure of the random graph in this docume
 """
 
 ## import statements
-import sys
 import matplotlib.pyplot as plt
 import networkx as nx
 import Klocke_hw5_part_one_new as search
