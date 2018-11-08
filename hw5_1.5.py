@@ -103,9 +103,18 @@ def depth_search(graph, start):
 
 
 
-    #tier = 0    ## start at first tier (with first node)
 
-    pick = 0    ## start with first node in list of adjacent nodes
+
+
+
+
+
+
+
+
+
+
+
 
     all = {}    ## dictionary of new adjacent nodes from each node
                 ## key is node number and value is list of adjacent (unvisited) node numbers
@@ -113,20 +122,20 @@ def depth_search(graph, start):
     tier = 0
     nodenum = 0
 
-
     all[(tier, nodenum)] = [x for x in nx.all_neighbors(graph, nodenum)]
 
     tierset = tier
     nodenumset = nodenum
-    covered = []
+    covered = []    ## nodes that have been searched
+        ## using covered in this way will ignore connections to nodes that have already been searched
 
+    covered.append(nodenum)
 
     tier += 1
     for adjacent in all[(tierset, nodenumset)]:
         nodenum = adjacent
-        all[(tier, nodenum)] = [x for x in nx.all_neighbors(graph, nodenum)] ## perhaps an in-line function here
-
-
+        covered.append(nodenum)
+        all[(tier, nodenum)] = [x for x in nx.all_neighbors(graph, nodenum) if x not in covered] ## perhaps an in-line function here
 
 
     """
@@ -134,9 +143,6 @@ def depth_search(graph, start):
     its own function, then run that function within a loop? 
     
     """
-
-
-    #all[tier] = [x for x in nx.all_neighbors(graph, tier)]
 
     ## throw this in a while loop ^ & iterate thru tiers and nodes in each tier
 
@@ -146,15 +152,20 @@ def depth_search(graph, start):
 
 
 
-    #stepone = nx.all_neighbors(graph, tier)
 
 
 
-    #tier1 = [x for x in all[0]]
-    # print(tier1[0])
-    #steptwo = nx.all_neighbors(graph, tier1[0])
-    #tier2 = [x for x in steptwo]
-    #print(tier2)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
