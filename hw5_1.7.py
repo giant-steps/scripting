@@ -96,6 +96,12 @@ def depth_search(graph, start):
 
 
 
+
+
+
+
+
+
     """
     possibly use recursion -- wrap this process of going one level deeper if there is another level into
     its own function, then run that function within a loop? 
@@ -107,14 +113,7 @@ def depth_search(graph, start):
     ## this structure should work for 2 and 3 -- just will move thru it in a different order
 
     print(all)
-
-
-
-
-
-
-
-
+    print(covered)  ## also need to show order in which nodes were visited -- this is 'covered'
 
 def breadth_search(graph, start):
     pass
