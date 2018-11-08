@@ -65,6 +65,7 @@ def depth_search(graph, start):
                 ## key is node number and value is list of adjacent (unvisited) node numbers
 
     tier = 0
+    pick = 0    ## depth first -- grab first list element for all, then second, etc.
     nodenum = start     ## start at node 0 -- this is fed in as function argument
 
     def all_append(dict, level, id, graph_id, check):
@@ -81,23 +82,39 @@ def depth_search(graph, start):
 
     covered.append(nodenum)
 
-    tier += 1
-    for adjacent in all[(tierset, nodenumset)]:
-        nodenum = adjacent
+    print(all)
+
+    a = True    #########
+    while a == True: ## fix this condition later
+        neighbors = all[tier,nodenum]
+        nodenum = neighbors[pick]
+        tier += 1
         covered.append(nodenum)
 
         all_append(all, tier, nodenum, graph, covered)
 
+        print(all)
+        print("cycle")
+
+
+        if all[tier,nodenum] == []:
+            break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ## run this for loop again and again -- will need to put it into larger loop
     ## that should do it
-
-
-
-
-
-
-
-
 
 
 
@@ -116,7 +133,47 @@ def depth_search(graph, start):
     print(covered)  ## also need to show order in which nodes were visited -- this is 'covered'
 
 def breadth_search(graph, start):
-    pass
+    all = {}  ## dictionary of new adjacent nodes from each node
+    ## key is node number and value is list of adjacent (unvisited) node numbers
+
+    tier = 0
+    nodenum = start  ## start at node 0 -- this is fed in as function argument
+
+    def all_append(dict, level, id, graph_id, check):
+        dict[(level, id)] = [x for x in nx.all_neighbors(graph_id, id) if x not in check]
+        ## dict is all, level is tier, id is nodenum, graph_id is graph, check is covered
+
+    tierset = tier
+    nodenumset = nodenum
+    covered = []  ## nodes that have been searched
+    ## using covered in this way will ignore connections to nodes that have already been searched
+
+    all_append(all, tier, nodenum, graph, covered)
+
+    covered.append(nodenum)
+
+    tier += 1
+    for adjacent in all[(tierset, nodenumset)]:
+        nodenum = adjacent
+        covered.append(nodenum)
+
+        all_append(all, tier, nodenum, graph, covered)
+
+    ## run this for loop again and again -- will need to put it into larger loop
+    ## that should do it
+
+    """
+    possibly use recursion -- wrap this process of going one level deeper if there is another level into
+    its own function, then run that function within a loop? 
+
+    """
+
+    ## throw this in a while loop ^ & iterate thru tiers and nodes in each tier
+
+    ## this structure should work for 2 and 3 -- just will move thru it in a different order
+
+    print(all)
+    print(covered)  ## also need to show order in which nodes were visited -- this is 'covered'
 
 ## main function definition
 def main():
