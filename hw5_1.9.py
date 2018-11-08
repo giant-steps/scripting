@@ -68,16 +68,16 @@ def depth_search(graph, start):
     pick = 0    ## depth first -- grab first list element for all, then second, etc.
     nodenum = start     ## start at node 0 -- this is fed in as function argument
 
-    def all_append(dict, level, id, graph_id, check):
-        dict[(level, id)] = [x for x in nx.all_neighbors(graph_id, id) if x not in check]
-        ## dict is all, level is tier, id is nodenum, graph_id is graph, check is covered
+    def all_append(dict, level, ind, id, graph_id, check):
+        dict[(level, ind, id)] = [x for x in nx.all_neighbors(graph_id, id) if x not in check]
+        ## dict is all, level is tier, ind is pick / num in list, id is nodenum, graph_id is graph, check is covered
 
     tierset = tier
     nodenumset = nodenum
     covered = []    ## nodes that have been searched
         ## using covered in this way will ignore connections to nodes that have already been searched
 
-    all_append(all, tier, nodenum, graph, covered)
+    all_append(all, tier, pick, nodenum, graph, covered)
 
 
     covered.append(nodenum)
@@ -87,13 +87,13 @@ def depth_search(graph, start):
     a = True    #########
     while a == True:
 
-        while all[tier,nodenum] != []:
-            neighbors = all[tier,nodenum]
+        while all[tier, pick, nodenum] != []:
+            neighbors = all[tier, pick, nodenum]
             nodenum = neighbors[pick]
             tier += 1
             covered.append(nodenum)
 
-            all_append(all, tier, nodenum, graph, covered)
+            all_append(all, tier, pick, nodenum, graph, covered)
 
             print(all)
             #print("cycle")     ###########
@@ -104,7 +104,10 @@ def depth_search(graph, start):
 
 
 
-
+    ## I need to rethink this -- don't want to have to specify node in dict key
+    ## should be tuple of (tier, pick)
+    ## nodenum will be stored in value
+    ## so value will be tuple (nodenum, list_of_adjacents)
 
 
 
