@@ -40,7 +40,7 @@ def random_graph(nnodes):
 
     DG.add_edges_from(links)    ## add edges to connect nodes
 
-    nx.draw_random(DG)  ## draw graph
+    nx.draw_random(DG, with_labels=True)  ## draw graph
     plt.draw()
 
     namenodes = {}
