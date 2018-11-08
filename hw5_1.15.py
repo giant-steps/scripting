@@ -32,13 +32,13 @@ def random_graph(nnodes, connect):
 
     links = []
 
-    random.seed(14)
+    random.seed(15)
 
     for i in nodes:     ## modify to remove double connections?
         for j in nodes:
             roll = random.randint(0, connect)
 
-            if roll == 0:
+            if (roll == 0):
                 links.append((i, j))
 
     DG.add_edges_from(links)
@@ -76,7 +76,6 @@ def depth_search(graph, start):
         ## using covered in this way will ignore connections to nodes that have already been searched
 
     all_append(all, tier, nodenum, graph, covered)
-
 
     covered.append(nodenum)
 
