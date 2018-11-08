@@ -52,84 +52,24 @@ def random_graph(nnodes, connect):
     for item in nodes:
         namenodes[item] = {'node number' : str(item)}
 
-    #print(namenodes)
-
     nx.set_node_attributes(DG, namenodes)
-    nodenames = nx.get_node_attributes(DG, 'node number')
-    #print(nodenames)       ## ***********
+    #nodenames = nx.get_node_attributes(DG, 'node number')
 
     return DG
 
 
-"""
-what is the approach here...
-    start with node zero 
-    if there is an adjacent node, go to it (if multiple, pick one)
-        repeat until there isn't a next node
-    then go back to last node -- if another, pursue it; if not, go back another node
-    
-    repeat this process until all nodes have been searched
-"""
+
 def depth_search(graph, start):
-
-    """
-    nodecount = nx.number_of_nodes(graph)
-
-    nx.get_node_attributes(graph, 'node number')
-
-    for node in nx.nodes(graph):
-        adjacent = nx.all_neighbors(graph, node)
-        for neighbor in adjacent:
-            print(neighbor)
-    """
-
-    """
-    COMMENTING THIS SECTION and copying to work on, revert back to if needed
-    start = [node for node in nx.nodes(graph) if node == 0]
-    #print(start)
-
-    stepone = nx.all_neighbors(graph, 0)
-    tier1 = [x for x in stepone]
-    #print(tier1[0])
-    steptwo = nx.all_neighbors(graph, tier1[0])
-    tier2 = [x for x in steptwo]
-    print(tier2)
-
-        ## for neighbors of tier1[0]: if not the one we came from, put in list -- then exhaust that list
-    """
-
-
-    ## possible approach -- dictionary of dictionaries (or list of lists)?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     all = {}    ## dictionary of new adjacent nodes from each node
                 ## key is node number and value is list of adjacent (unvisited) node numbers
 
     tier = 0
-    nodenum = 0
+    nodenum = start     ## start at node 0 -- this is fed in as function argument
 
     def all_append(dict, level, id, graph_id, check):
         dict[(level, id)] = [x for x in nx.all_neighbors(graph_id, id) if x not in check]
-
         ## dict is all, level is tier, id is nodenum, graph_id is graph, check is covered
-
-
-
-    #all[(tier, nodenum)] = [x for x in nx.all_neighbors(graph, nodenum)]
 
     tierset = tier
     nodenumset = nodenum
@@ -146,8 +86,11 @@ def depth_search(graph, start):
         nodenum = adjacent
         covered.append(nodenum)
 
-        #all[(tier, nodenum)] = [x for x in nx.all_neighbors(graph, nodenum) if x not in covered] ## perhaps an in-line function here
         all_append(all, tier, nodenum, graph, covered)
+
+    ## run this for loop again and again -- will need to put it into larger loop
+    ## that should do it
+
 
 
 
@@ -164,27 +107,6 @@ def depth_search(graph, start):
     ## this structure should work for 2 and 3 -- just will move thru it in a different order
 
     print(all)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ## for neighbors of tier1[0]: if not the one we came from, put in list -- then exhaust that list
 
 
 
