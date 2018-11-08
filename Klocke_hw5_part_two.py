@@ -36,7 +36,10 @@ def main():
     print(search.depth_search(graph1, 0))
     print(search.breadth_search(graph1, 0))
 
+    ## do length of list returned by search compared to input value of 10 -- if equal, graph is connected
+        ## give a brief explanation of this
 
+    
 
     ## run main function
 if __name__ == "__main__":
