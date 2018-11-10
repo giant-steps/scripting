@@ -1,5 +1,7 @@
 """
-This program will answer part two of hw5 for scripting
+Christopher Klocke
+Assignment #5
+Submitted: November 8th, 2018
 
 4) Create and draw a random graph with 10 nodes (show the node labels on the drawing and save
 the figure to a file).
@@ -22,10 +24,9 @@ output for 4-8 above (please paste the figure of the random graph in this docume
 """
 
 ## import statements
-import sys
 import matplotlib.pyplot as plt
 import networkx as nx
-import Klocke_hw5_part_one_beta as search
+import Klocke_hw5_part_one_new as search
 
 ## function / class definitions
 
@@ -34,21 +35,26 @@ def main():
     graph1 = search.random_graph(10)
     plt.show()
 
-    print(search.depth_search(graph1, 0))
-    print(search.breadth_search(graph1, 0))
+    depth_rand = search.depth_search(graph1, 0)
+    print(depth_rand)
+    breadth_rand = search.breadth_search(graph1, 0)
+    print(breadth_rand)
 
-    ## do length of list returned by search compared to input value of 10 -- if equal, graph is connected
-        ## give a brief explanation of this
+    if nx.number_of_nodes(graph1) == len(depth_rand):
+        print('This graph is connected.')
 
     KG = nx.karate_club_graph()
     nx.draw(KG, with_labels=True)
 
     plt.show()
 
-    print(search.depth_search(KG, 0))
-    print(search.breadth_search(KG, 0))
+    depth_karate = search.depth_search(KG, 0)
+    print(depth_karate)
+    breadth_karate = search.breadth_search(KG, 0)
+    print(breadth_karate)
 
-    ## add #7 for karate club
+    if nx.number_of_nodes(KG) == len(depth_karate):
+        print('This graph is connected.')
 
     ## run main function
 if __name__ == "__main__":

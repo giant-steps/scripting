@@ -62,36 +62,20 @@ def depth_search(graph, start):
         adjacent = [x for x in nx.all_neighbors(graph, site) if x not in check]
         return adjacent
 
-    objects = new_adjacent(nodenum, covered)    ## sets 'objects' to neighbors of first node
+    look = []   ## look is a stack
+    look.append(nodenum)
 
-    def next_tier(arg): ## takes a list of nodes as input and returns the neighbors of the first element not yet searched
-        count = 0
-        output = ''
+    while look != []:   ## while stack is not empty
 
-        while count < len(arg):
+        last = look[(len(look) - 1)]    ## look at last element
+        if last not in covered:         ## add to searched items if not there already
+            covered.append(last)
 
-            if arg[count] not in covered:
-                output = arg[count]
-                break
-
-            else:
-                count += 1
-
-        if output == '':
-            return ''
+        if new_adjacent(last, covered) != []:   ## if element on top of stack has new neighbors:
+            look.append(new_adjacent(last, covered)[0])     ##  add the first new neighbor to top of stack
 
         else:
-            covered.append(output)
-            return new_adjacent(output, covered)
-
-    go = True
-    while go == True:
-        objects = next_tier(objects)
-
-        if objects == '':
-            go = False
-
-
+            look.pop()  ## if no new neighbors (reached end of depth), go up a level / remove last element from stack
 
     return covered  ## returns searched nodes, in order
 

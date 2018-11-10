@@ -84,14 +84,23 @@ def depth_search(graph, start):
             covered.append(output)
             return new_adjacent(output, covered)
 
-    go = True
-    while go == True:
-        objects = next_tier(objects)
+    total = nx.number_of_nodes(graph)
+    while len(covered) < total:
+        print("loop")
 
-        if objects == '':
-            go = False
+        go = True
+        while go == True:
+            objects = next_tier(objects)
 
+            if objects == '':
+                go = False
 
+        ###
+        objects = new_adjacent(nodenum, covered)    ## re-set objects to
+        nodenum = start
+
+    ## I think the issue is here -- going to end and then stopping
+    ## need to move back to top and start again
 
     return covered  ## returns searched nodes, in order
 
